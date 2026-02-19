@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti </title>
+
+    <!-- Tipografías -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #fce7f3, #e0f2fe);
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.2rem;
+            color: #ec4899;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #374151;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            animation: slideUp 1.5s ease;
+        }
+
+        .heart {
+            font-size: 2rem;
+            animation: pulse 2s infinite;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #f9a8d4, #c7d2fe);
+            border: none;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #111827;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .hidden-message {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #be185d;
+            display: none;
+            animation: fadeIn 1s ease;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        /* Responsivo */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="heart">💖</div>
+        <h1>Feliz Cumpleaños</h1>
+
+        <p>
+            Primeramente feliz cumpleaños mi niña, espero que hoy tengas un increíble día,
+            sabes de ahora en adelante todo podría ser diferente para ti, pero quiero estar a tu lado
+            para apoyarte en todos los problemas que tengas, en todas las metas que quieras cumplir,
+            quiero que los dos sigamos y progresemos juntos, y si tus 18 disfrútalos bien pequeñita
+            que como dicen solo pasan una vez en la vida, te amo demasiado mi amor. 🥰
+        </p>
+
+        <button onclick="mostrarMensaje()">💌 Para ti</button>
+
+        <div class="hidden-message" id="mensaje">
+            Siempre contigo, hoy y siempre 💕
+        </div>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            const mensaje = document.getElementById("mensaje");
+            mensaje.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
